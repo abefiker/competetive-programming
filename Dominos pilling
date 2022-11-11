@@ -1,0 +1,21 @@
+package Domino;
+ 
+import java.util.Scanner;
+ 
+public class NumberOfDominos {
+ 
+	public static void main(String[] args) {
+		int maxDomino = 1;
+	   Scanner scan = new Scanner(System.in);	
+	   System.out.println("Input");
+	   int row = scan.nextInt();
+	   int col = scan.nextInt();
+	   if(row % 2==0 || col % 2==0) {
+		    maxDomino = (row*col)/2;
+	   }else if(row % 2 !=0 && col % 2 !=0) {
+		    maxDomino = (row*col - 1)/2;
+	   }
+	   System.out.println(maxDomino);
+	   
+	}
+}
