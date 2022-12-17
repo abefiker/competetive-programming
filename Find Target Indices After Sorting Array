@@ -1,0 +1,26 @@
+class Solution {
+    public List<Integer> targetIndices(int[] nums, int target) {
+         int temp=0;
+		   for(int i= 0;i<nums.length-1;++i) {
+	    		  int min_index=i;
+	    	    	 for(int j=i+1;j<nums.length;j++) {
+	    		    	if(nums[min_index]>nums[j]) {
+	    			       min_index=j;	
+	    			  }
+	    		   }
+	    	   temp=nums[min_index];
+	    	   nums[min_index]=nums[i];
+	    	   nums[i]=temp;
+	    	 }
+	    	 List <Integer> targetIndices = new        ArrayList<>();
+	    	 for(int i=0;i<nums.length;++i) {
+	    		 if(nums[i]==target) {
+	    			 targetIndices.add(i);
+	    		 }
+	    	 }
+	    	 for(int i = 0 ; i < targetIndices.size();++i) {
+	    		 System.out.print(targetIndices.get(i)+ " ");
+	    	 }
+	       return targetIndices;
+    }
+}
